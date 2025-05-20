@@ -1,34 +1,68 @@
 <!DOCTYPE html>
-<html style="font-size: 16px;"><head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <meta name="keywords" content=""><meta name="description" content="">
-    <title></title>
-    <link rel="stylesheet" href="/nicepage.css" media="screen">
-    <script class="u-script" type="text/javascript" src="np://app.desktop.nicepage.com/jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="np://app.desktop.nicepage.com/nicepage.js" defer=""></script>
-<meta name="generator" content="Nicepage 7.7.3, nicepage.com"></head>
-<body class="u-body" data-style="blank" data-posts="" data-global-section-properties="{&quot;colorings&quot;:{&quot;light&quot;:[&quot;clean&quot;],&quot;colored&quot;:[&quot;clean&quot;],&quot;dark&quot;:[&quot;dark&quot;]}}" data-source="" data-page-sections-style="[{&quot;name&quot;:&quot;blank&quot;}]" data-page-coloring-types="{&quot;light&quot;:[&quot;clean&quot;],&quot;colored&quot;:[&quot;clean&quot;],&quot;dark&quot;:[&quot;dark&quot;]}" data-page-category="&quot;Basic&quot;"><section class="u-clearfix u-block-c79d-1" custom-posts-hash="[]" data-style="blank" data-section-properties="{&quot;margin&quot;:&quot;none&quot;,&quot;stretch&quot;:true}" id="block-1" data-outline-name="Block 1" data-id="c79d">
-  <div class="u-clearfix u-sheet u-block-c79d-2"></div>
-<style data-mode="XL">@media (min-width: 1200px) {
-  .u-block-c79d-2 {
-    min-height: 400px;
-  }
-}</style><style data-mode="LG">@media (max-width: 1199px) and (min-width: 992px) {
-  .u-block-c79d-2 {
-    min-height: 400px;
-  }
-}</style><style data-mode="MD">@media (max-width: 991px) and (min-width: 768px) {
-  .u-block-c79d-2 {
-    min-height: 400px;
-  }
-}</style><style data-mode="SM">@media (max-width: 767px) and (min-width: 576px) {
-  .u-block-c79d-2 {
-    min-height: 400px;
-  }
-}</style><style data-mode="XS">@media (max-width: 575px) {
-  .u-block-c79d-2 {
-    min-height: 400px;
-  }
-}</style></section>
-</body></html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Kontakt</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 2em;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      color: #333;
+    }
+    form {
+      background: white;
+      padding: 2em;
+      border-radius: 8px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 1em;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.5em;
+      margin-top: 0.3em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    button {
+      margin-top: 1em;
+      padding: 0.7em 1.5em;
+      background-color: #007acc;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Kontakt</h1>
+  <form action="mailto:deine@email.de" method="post" enctype="text/plain">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="Name" required>
+
+    <label for="email">E-Mail:</label>
+    <input type="email" id="email" name="Email" required>
+
+    <label for="nachricht">Nachricht:</label>
+    <textarea id="nachricht" name="Nachricht" rows="5" required></textarea>
+
+    <button type="submit">Absenden</button>
+  </form>
+
+</body>
+</html>
+
