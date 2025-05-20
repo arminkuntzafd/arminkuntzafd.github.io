@@ -50,11 +50,6 @@
       display: flex;
       justify-content: center;
       padding: 10px 0;
-      position: relative;
-    }
-
-    nav > div {
-      position: relative;
     }
 
     nav a {
@@ -66,38 +61,6 @@
 
     nav a:hover {
       text-decoration: underline;
-    }
-
-    /* Dropdown styles */
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #005999;
-      min-width: 200px;
-      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-      z-index: 1;
-      top: 100%;
-      left: 0;
-    }
-
-    .dropdown-content a {
-      display: block;
-      padding: 10px;
-      color: white;
-      text-align: left;
-    }
-
-    .dropdown-content a:hover {
-      background-color: #007ac1;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
     }
 
     main {
@@ -149,15 +112,7 @@
   <nav>
     <a href="index.html">Startseite</a>
     <a href="kontakt.html">Kontakt</a>
-
-    <div class="dropdown">
-      <a href="links.html">Links</a>
-      <div class="dropdown-content">
-        <a href="https://alternative-rlp.de/" target="_blank" rel="noopener noreferrer">AfD Rheinland-Pfalz</a>
-        <a href="https://afd-swp.de/" target="_blank" rel="noopener noreferrer">AfD Südwestpfalz</a>
-      </div>
-    </div>
-
+    <a href="links.html">Links</a> <!-- Menüpunkt ersetzt Dropdown -->
     <div class="dropdown">
       <a href="#">Satzungen</a>
       <div class="dropdown-content">
@@ -182,4 +137,3 @@
 
 </body>
 </html>
-
