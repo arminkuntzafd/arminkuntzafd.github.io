@@ -2,11 +2,14 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Kontakt – Armin Kuntz</title>
+  <title>Armin Kuntz – AfD</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="AfD_Logo_blau.png">
   <link rel="shortcut icon" href="AfD_Logo_blau.png" type="image/png">
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
@@ -47,59 +50,80 @@
       display: flex;
       justify-content: center;
       padding: 10px 0;
+      position: relative;
+      gap: 20px;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 20px;
       font-weight: bold;
+      padding: 8px 12px;
+      display: inline-block;
     }
 
     nav a:hover {
       text-decoration: underline;
     }
 
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown > a {
+      cursor: pointer;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #005999;
+      min-width: 200px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      top: 100%;
+      left: 0;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px;
+      color: white;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #007ac1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
     main {
       padding: 40px 20px;
-      max-width: 600px;
-      margin: auto;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
       text-align: center;
     }
 
-    h2 {
-      color: #007ac1;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
+    main img {
+      max-width: 300px;
+      height: auto;
+      border-radius: 8px;
       margin-top: 20px;
     }
 
-    input, textarea {
-      padding: 10px;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    button {
+    .kontakt-link {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
       background-color: #007ac1;
       color: white;
-      border: none;
-      padding: 12px;
-      font-size: 1rem;
+      text-decoration: none;
       border-radius: 5px;
-      cursor: pointer;
       font-weight: bold;
     }
 
-    button:hover {
+    .kontakt-link:hover {
       background-color: #005999;
     }
 
@@ -117,7 +141,7 @@
   <header>
     <img src="AfD_Logo_blau.png" alt="AfD Logo">
     <div>
-      <h1><a href="Kontakt.html" style="color: white; text-decoration: none;">Armin Kuntz</a></h1>
+      <h1><a href="kontakt.html" style="color: white; text-decoration: none;">Armin Kuntz</a></h1>
       <p>Alternative für Deutschland – Direkt, Klar, Patriotisch</p>
     </div>
   </header>
@@ -125,19 +149,31 @@
   <nav>
     <a href="index.html">Startseite</a>
     <a href="Kontakt.html">Kontakt</a>
-    <a href="links.html">Links</a>
+
+    <div class="dropdown">
+      <a href="#">Links</a>
+      <div class="dropdown-content">
+        <a href="https://alternative-rlp.de/" target="_blank" rel="noopener noreferrer">AfD Rheinland-Pfalz</a>
+        <a href="https://afd-swp.de/" target="_blank" rel="noopener noreferrer">AfD Südwestpfalz</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <a href="#">Satzungen</a>
+      <div class="dropdown-content">
+        <a href="https://www.afd.de/wp-content/uploads/2022/08/20220816_Bundessatzung_Stand-13.-BPT-Riesa.pdf" target="_blank" rel="noopener noreferrer">AfD Bund</a>
+        <a href="https://alternative-rlp.de/wp-content/uploads/2023/06/Landessatzung-AfD-RP.pdf" target="_blank" rel="noopener noreferrer">AfD Rheinland-Pfalz</a>
+        <a href="https://afd-swp.de/wp-content/uploads/2023/06/Satzung-AfD-SWP.pdf" target="_blank" rel="noopener noreferrer">AfD Südwestpfalz</a>
+      </div>
+    </div>
   </nav>
 
   <main>
-    <h2>Kontakt aufnehmen</h2>
-    <p>Ich freue mich auf Ihre Nachricht.</p>
-
-    <form action="mailto:deine-email@example.com" method="post" enctype="text/plain">
-      <input type="text" name="name" placeholder="Ihr Name" required>
-      <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" required>
-      <textarea name="nachricht" rows="6" placeholder="Ihre Nachricht..." required></textarea>
-      <button type="submit">Nachricht senden</button>
-    </form>
+    <h2>Willkommen auf meiner Seite</h2>
+    <p>Ich setze mich ein für eine klare Politik mit Verantwortung für Deutschland.</p>
+    <img src="profile_with_logo.png" alt="Armin Kuntz mit Logo">
+    <br>
+    <a class="kontakt-link" href="kontakt.html">Jetzt Kontakt aufnehmen</a>
   </main>
 
   <footer>
