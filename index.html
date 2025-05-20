@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- AfD-Blaues Favicon -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="afd-logo-blau.png" type="image/png">
 
   <!-- Google Fonts (optional) -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
@@ -23,7 +23,25 @@
       background-color: #007ac1; /* AfD-Blau */
       color: white;
       padding: 20px;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    header img {
+      height: 50px;
+      width: auto;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 600;
     }
 
     nav {
@@ -83,8 +101,11 @@
 <body>
 
   <header>
-    <h1>Armin Kuntz</h1>
-    <p>Alternative für Deutschland – Direkt, Klar, Patriotisch</p>
+    <img src="afd-logo-blau.png" alt="AfD Logo">
+    <div>
+      <h1>Armin Kuntz</h1>
+      <p>Alternative für Deutschland – Direkt, Klar, Patriotisch</p>
+    </div>
   </header>
 
   <nav>
