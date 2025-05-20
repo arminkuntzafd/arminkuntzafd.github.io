@@ -2,24 +2,36 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Kontakt</title>
+  <title>Kontakt - Armin Kuntz AfD</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 2em;
-      background-color: #f4f4f4;
     }
-    h1 {
-      color: #333;
+    header {
+      background-color: #333;
+      padding: 1em;
+      display: flex;
+      align-items: center;
+    }
+    header img {
+      height: 50px;
+      margin-right: 1em;
+    }
+    nav a {
+      color: white;
+      margin-right: 1em;
+      text-decoration: none;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      padding: 2em;
     }
     form {
-      background: white;
-      padding: 2em;
-      border-radius: 8px;
-      max-width: 500px;
+      max-width: 600px;
       margin: auto;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     label {
       display: block;
@@ -45,24 +57,48 @@
     button:hover {
       background-color: #005fa3;
     }
+    footer {
+      background-color: #f1f1f1;
+      text-align: center;
+      padding: 1em;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
   </style>
 </head>
 <body>
 
-  <h1>Kontakt</h1>
-  <form action="mailto:deine@email.de" method="post" enctype="text/plain">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="Name" required>
+  <header>
+    <a href="index.html">
+      <img src="AfD-Logo blau.png" alt="Logo">
+    </a>
+    <nav>
+      <a href="index.html">Startseite</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="links.html">Links</a>
+    </nav>
+  </header>
 
-    <label for="email">E-Mail:</label>
-    <input type="email" id="email" name="Email" required>
+  <main>
+    <h1>Kontakt</h1>
+    <form action="mailto:kuntzarmin6@gmail.com" method="post" enctype="text/plain">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="Name" required>
 
-    <label for="nachricht">Nachricht:</label>
-    <textarea id="nachricht" name="Nachricht" rows="5" required></textarea>
+      <label for="email">E-Mail:</label>
+      <input type="email" id="email" name="Email" required>
 
-    <button type="submit">Absenden</button>
-  </form>
+      <label for="nachricht">Nachricht:</label>
+      <textarea id="nachricht" name="Nachricht" rows="5" required></textarea>
+
+      <button type="submit">Absenden</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Armin Kuntz AfD. Alle Rechte vorbehalten.</p>
+  </footer>
 
 </body>
 </html>
-
