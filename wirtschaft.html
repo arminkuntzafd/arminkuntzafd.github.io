@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Wirtschaft – Armin Kuntz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 6px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #005999;
+      margin-bottom: 30px;
+    }
+
+    h3 {
+      color: #007ac1;
+      margin-top: 30px;
+    }
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      margin-left: 20px;
+    }
+
+    footer {
+      background-color: #007ac1;
+      color: white;
+      text-align: center;
+      padding: 15px 10px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="header-container"></div>
+
+  <script>
+    fetch('/header.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+      })
+      .catch(err => {
+        console.error('Header konnte nicht geladen werden:', err);
+      });
+  </script>
+
+  <main>
+    <h2>Unsere Position zur Wirtschaft</h2>
+
+    <p>
+      Eine gesunde und leistungsfähige Wirtschaft ist das Fundament für Wohlstand, soziale Sicherheit und ein selbstbestimmtes Leben. Unser wirtschaftspolitisches Leitbild ist klar: 
+      <strong>„So viel Staat wie nötig, so wenig Staat wie möglich.“</strong>
+    </p>
+
+    <h3>Wirtschaftliche Freiheit sichern</h3>
+    <p>
+      Wir setzen uns für eine marktwirtschaftliche Ordnung ein, in der unternehmerische Freiheit und Eigenverantwortung im Mittelpunkt stehen. Staatliche Eingriffe sollen auf das Notwendige begrenzt sein – zum Beispiel beim Schutz vor Monopolen, bei der Rechtsdurchsetzung oder im Krisenfall.
+    </p>
+
+    <h3>Bürokratie abbauen</h3>
+    <p>
+      Der wachsende Verwaltungsaufwand in Deutschland erstickt viele Unternehmen, insbesondere kleine und mittelständische Betriebe. Wir fordern:
+    </p>
+    <ul>
+      <li>eine spürbare Entlastung von Dokumentations- und Berichtspflichten,</li>
+      <li>digitale Vereinfachung von Antrags- und Meldeverfahren,</li>
+      <li>eine Bürokratiebremse bei neuen Gesetzen.</li>
+    </ul>
+
+    <h3>Steuern fair und gerecht gestalten</h3>
+    <p>
+      Leistung muss sich wieder lohnen. Wir setzen uns für eine gerechte Steuerpolitik ein:
+    </p>
+    <ul>
+      <li>Abbau der sogenannten „kalten Progression“,</li>
+      <li>Absenkung der Unternehmenssteuern, um Wettbewerbsfähigkeit zu sichern,</li>
+      <li>Keine neuen Belastungen für den Mittelstand und die arbeitende Bevölkerung.</li>
+    </ul>
+
+    <h3>Förderung von Mittelstand, Handwerk und Innovation</h3>
+    <p>
+      Mittelstand und Handwerk sind das Rückgrat unserer Wirtschaft. Wir fördern:
+    </p>
+    <ul>
+      <li>ein innovationsfreundliches Umfeld,</li>
+      <li>Ausbildungsprogramme und Meisterhandwerk,</li>
+      <li>eine bessere Vereinbarkeit von Familienbetrieb und Steuerrecht.</li>
+    </ul>
+
+    <h3>Freiheit statt Ideologie</h3>
+    <p>
+      Die deutsche Wirtschaftspolitik darf nicht länger durch ideologische Vorgaben blockiert werden – etwa in der Energie-, Klima- oder Verkehrspolitik. Unternehmen brauchen Planbarkeit, Rechtssicherheit und Technologieoffenheit.
+    </p>
+
+    <p>
+      Wir stehen für eine Wirtschaftspolitik, die auf Freiheit, Leistung und Eigenverantwortung setzt – zum Wohle aller Bürgerinnen und Bürger.
+    </p>
+  </main>
+
+</body>
+</html>
