@@ -1,41 +1,77 @@
 <!-- header.html -->
-<header>
-  <img src="AfD_Logo_blau.png" alt="AfD Logo" style="height: 50px; vertical-align: middle;">
-  <div style="display: inline-block; vertical-align: middle; margin-left: 15px;">
-    <h1 style="margin: 0;"><a href="index.html" style="color: white; text-decoration: none;">Armin Kuntz</a></h1>
-    <p style="margin: 0;">Alternative für Deutschland – Direkt, Klar, Patriotisch</p>
-  </div>
-</header>
+<style>
+  header {
+    background-color: #007ac1;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
 
-<nav>
-  <a href="index.html">Startseite</a>
-  <a href="Kontakt.html">Kontakt</a>
+  header img {
+    height: 50px;
+    width: auto;
+  }
 
-  <div class="dropdown">
-    <a href="#">Links</a>
-    <div class="dropdown-content">
-      <a href="https://afd.de/" target="_blank">AfD.de</a>
-      <a href="https://alternative-rlp.de/" target="_blank">AfD Rheinland-Pfalz</a>
-      <a href="https://afd-swp.de/" target="_blank">AfD Südwestpfalz</a>
-    </div>
-  </div>
+  header .title {
+    display: flex;
+    flex-direction: column;
+  }
 
-  <div class="dropdown">
-    <a href="#">Satzungen</a>
-    <div class="dropdown-content">
-      <a href="https://www.afd.de/wp-content/uploads/2022/08/20220816_Bundessatzung_Stand-13.-BPT-Riesa.pdf" target="_blank">AfD Bund</a>
-      <a href="https://alternative-rlp.de/wp-content/uploads/2023/06/Landessatzung-AfD-RP.pdf" target="_blank">AfD RLP</a>
-      <a href="https://afd-swp.de/wp-content/uploads/2023/06/Satzung-AfD-SWP.pdf" target="_blank">AfD SWP</a>
-    </div>
-  </div>
+  header .title h1 {
+    margin: 0;
+    font-size: 1.6rem;
+  }
 
-  <div class="dropdown">
-    <a href="#">Standpunkte</a>
-    <div class="dropdown-content">
-      <a href="sicherheit.html">Sicherheit</a>
-      <a href="wirtschaft.html">Wirtschaft</a>
-      <a href="energie.html">Energie</a>
-      <a href="familie.html">Familie</a>
-    </div>
-  </div>
-</nav>
+  header .title p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  nav {
+    background-color: #005999;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px 0;
+    gap: 15px;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: bold;
+  }
+
+  nav a:hover {
+    background-color: #007ac1;
+    border-radius: 5px;
+  }
+
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #005999;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    flex-direction: column;
+  }
+
+  .dropdown-content a {
+    padding: 10px;
+    display: block;
+    color: white;
+  }
+
+  .dropdown:hover
