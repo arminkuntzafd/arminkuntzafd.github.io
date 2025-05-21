@@ -2,43 +2,30 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Standpunkt – Sicherheit</title>
+  <title>Sicherheit – Armin Kuntz</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
     body {
       font-family: 'Open Sans', sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f5f5f5;
-      color: #333;
-    }
-
-    header {
-      background-color: #007ac1;
-      color: white;
-      padding: 20px;
-      text-align: center;
     }
 
     main {
-      max-width: 900px;
-      margin: 40px auto;
-      background-color: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    }
-
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-
-    p {
-      font-size: 1.1rem;
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: 0 auto;
       line-height: 1.6;
-      margin-bottom: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
     }
 
     footer {
@@ -52,27 +39,37 @@
 </head>
 <body>
 
-  <header>
-    <h1>Standpunkt: Sicherheit</h1>
-  </header>
+  <!-- Dynamischer Header -->
+  <div id="header-container"></div>
 
   <main>
+    <h2>Unsere Standpunkte zur Sicherheit</h2>
+
     <p>
-      Deutschland muss sich außenpolitisch wieder stärker auf Neutralität und Zurückhaltung besinnen. Militärische Einsätze im Ausland sollen ausschließlich im Rahmen des Artikels 5 des NATO-Vertrags erfolgen – also nur zur kollektiven Verteidigung im Ernstfall. Einmischungen in internationale Konflikte lehne ich strikt ab.
+      Deutschland soll sich außenpolitisch wie ein neutraler Staat verhalten. Eine Einmischung in internationale Konflikte ist zu vermeiden. NATO-Einsätze dürfen nur im Rahmen des Artikel 5 des NATO-Statuts im Verteidigungsfall stattfinden.
     </p>
 
     <p>
-      Auch im Inneren braucht unser Land mehr Sicherheit. Dafür ist eine personelle und materielle Stärkung der Polizei unerlässlich. Unsere Ordnungshüter müssen in der Lage sein, Kriminalität konsequent zu bekämpfen und für Recht und Ordnung zu sorgen.
+      Im Inneren ist die Sicherheit der Bürger oberstes Gebot. Deshalb fordern wir eine personelle und materielle Stärkung der Polizei. Eine sichtbare Polizeipräsenz schafft Vertrauen und schützt vor Kriminalität.
     </p>
 
     <p>
-      Ich erinnere mich an meine Jugendzeit an der deutsch-französischen Grenze: Regelmäßige Grenzkontrollen waren damals selbstverständlich – und sie haben niemandem geschadet. Vielmehr vermittelten sie ein Gefühl von Sicherheit und staatlicher Handlungsfähigkeit. Solche Maßnahmen dürfen kein Tabu sein, wenn sie zur inneren Sicherheit beitragen.
+      Ich erinnere mich an meine Jugend an der deutsch-französischen Grenze – Grenzkontrollen waren damals selbstverständlich und effektiv. Wir setzen uns für die Wiedereinführung gezielter Grenzkontrollen zum Schutz unserer nationalen Sicherheit ein.
     </p>
   </main>
 
   <footer>
     &copy; 2025 Armin Kuntz – Alternative für Deutschland
   </footer>
+
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+      })
+      .catch(error => console.error('Fehler beim Laden des Headers:', error));
+  </script>
 
 </body>
 </html>
