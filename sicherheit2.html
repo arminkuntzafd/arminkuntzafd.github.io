@@ -1,69 +1,79 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sicherheit</title>
-    <link rel="stylesheet" href="styles/stile.css"
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sicherheit - Armin Kuntz AfD</title>
+  <link rel="stylesheet" href="Stile/stile.css" />
+  <link rel="icon" href="AfD_Logo_blau.png" type="image/png" />
   <style>
     body {
-      font-family: 'Open Sans', sans-serif;
+      padding-top: 140px; /* Platz für fixierten Header + Nav */
+      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f5f5f5;
-    }
-
-    main {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    h2 {
-      color: #007ac1;
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    p {
-      font-size: 1.1rem;
+      background-color: #f9f9f9;
+      color: #222;
       line-height: 1.6;
-      margin-bottom: 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
-
+    main {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      flex-grow: 1;
+    }
     footer {
-      background-color: #007ac1;
+      background-color: #222;
       color: white;
       text-align: center;
-      padding: 15px 10px;
-      margin-top: 40px;
+      padding: 20px 10px;
+      font-size: 0.9rem;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
     }
   </style>
 </head>
 <body>
 
-  <!-- Hier wird der Header geladen -->
-  <div id="header-container"></div>
-  <script>
-  fetch('/header.html')
-    .then(response => response.text())
+<!-- Header und Navigation werden geladen -->
+<div id="header-container"></div>
+
+<main>
+  <h2>Sicherheit</h2>
+  <p>Die innere und äußere Sicherheit ist eines der wichtigsten Anliegen unserer Partei. Wir setzen uns entschieden für den Schutz unserer Bürgerinnen und Bürger ein und fordern eine starke Polizei sowie klare Gesetzgebungen zur Gewährleistung der öffentlichen Ordnung.</p>
+
+  <h3>Innere Sicherheit</h3>
+  <p>Zur Stärkung der inneren Sicherheit gehören unter anderem die konsequente Bekämpfung von Kriminalität und Terrorismus, der Ausbau der Polizeikräfte sowie die Verbesserung der Ausrüstung und Ausbildung der Sicherheitsbehörden.</p>
+
+  <h3>Äußere Sicherheit</h3>
+  <p>Außenpolitisch legen wir Wert auf eine sichere und souveräne Bundesrepublik Deutschland. Die Bundeswehr muss als Verteidigungsarmee modernisiert und besser ausgestattet werden, um unsere Grenzen und unsere Interessen wirksam schützen zu können.</p>
+
+  <h3>Integration und Prävention</h3>
+  <p>Darüber hinaus ist Prävention ein wichtiger Baustein unserer Sicherheitsstrategie. Integrationsförderung und die Unterstützung von Familien sollen dazu beitragen, gesellschaftliche Spannungen abzubauen und langfristig für mehr Sicherheit zu sorgen.</p>
+</main>
+
+<footer>
+  <p>© 2025 Armin Kuntz AfD. Alle Rechte vorbehalten.</p>
+</footer>
+
+<script>
+  // Header und Navigation aus externer Datei laden
+  fetch('header.html')
+    .then(response => {
+      if (!response.ok) throw new Error('Fehler beim Laden des Headers');
+      return response.text();
+    })
     .then(html => {
       document.getElementById('header-container').innerHTML = html;
+    })
+    .catch(e => {
+      console.error('Fehler:', e);
     });
 </script>
-
-  <main>
-    <h2>Sicherheit</h2>
-    <p>Deutschland soll sich wie ein neutraler Staat verhalten. Einmischungen in internationale Konflikte sollen grundsätzlich vermieden werden.</p>
-    <p>NATO-Einsätze dürfen ausschließlich auf Basis des Artikels 5 des NATO-Vertrages (Verteidigungsfall) erfolgen. Auslandseinsätze ohne direkte Bedrohung der Bundesrepublik lehnen wir entschieden ab.</p>
-    <p>Im Inneren fordern wir eine deutliche personelle und materielle Aufstockung der Polizei. Der Staat muss wieder in der Lage sein, Recht und Ordnung flächendeckend durchzusetzen.</p>
-    <p>Grenzkontrollen sollen an den deutschen Außengrenzen wieder eingeführt werden – wie ich es selbst als junger Mensch an der deutsch-französischen Grenze erlebt habe: kontrolliert, sicher, nicht belastend.</p>
-    <p>Unser Ziel: Ein sicheres Deutschland für alle Bürger.</p>
-  </main>
-
-  <footer>
-    &copy; 2025 Armin Kuntz – Alternative für Deutschland
-  </footer>
 
 </body>
 </html>
