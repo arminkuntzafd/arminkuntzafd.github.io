@@ -1,200 +1,92 @@
-<!-- header.html -->
-<style>
-  /* Grundstyles */
-  body {
-    margin: 0;
-    font-family: 'Open Sans', sans-serif;
-    background-color: #f5f5f5;
-  }
-
-  header {
-    background-color: #007ac1;
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    flex-wrap: wrap;
-  }
-
-  header img {
-    height: 50px;
-    width: auto;
-  }
-
-  header .title {
-    display: flex;
-    flex-direction: column;
-  }
-
-  header .title h1 {
-    margin: 0;
-    font-size: 1.6rem;
-  }
-
-  header .title p {
-    margin: 0;
-    font-size: 1rem;
-    font-weight: 600;
-  }
-
-  nav {
-    background-color: #005999;
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    gap: 0;
-  }
-
-  nav > ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-  }
-
-  nav li {
-    position: relative;
-  }
-
-  nav > ul > li {
-    /* Gleiche Höhe & Breite für Top-Level-Menüs */
-    height: 45px;
-    line-height: 45px;
-    min-width: 110px;
-    text-align: center;
-    border-right: 1px solid rgba(255,255,255,0.15);
-  }
-
-  nav > ul > li:last-child {
-    border-right: none;
-  }
-
-  nav a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 0 15px;
-    height: 100%;
-    box-sizing: border-box;
-  }
-
-  nav a:hover, nav li:hover > a {
-    background-color: #007ac1;
-  }
-
-  /* Dropdown Styles */
-  nav ul ul {
-    display: none;
-    position: absolute;
-    background-color: #005999;
-    top: 45px; /* Höhe des Menüs */
-    left: 0;
-    min-width: 180px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-    z-index: 1000;
-    flex-direction: column;
-  }
-
-  nav ul ul li {
-    border-right: none;
-    border-bottom: 1px solid rgba(255,255,255,0.15);
-    height: auto;
-    line-height: normal;
-  }
-
-  nav ul ul li:last-child {
-    border-bottom: none;
-  }
-
-  nav ul ul a {
-    padding: 10px 15px;
-    font-weight: normal;
-    height: auto;
-    line-height: normal;
-    text-align: left;
-  }
-
-  nav li:hover > ul {
-    display: flex;
-  }
-
-  /* Responsive (optional) */
-  @media (max-width: 600px) {
-    nav > ul {
-      flex-direction: column;
-    }
-
-    nav > ul > li {
-      border-right: none;
-      border-bottom: 1px solid rgba(255,255,255,0.15);
-      min-width: 100%;
-      height: auto;
-      line-height: normal;
-    }
-
-    nav ul ul {
-      position: static;
-      box-shadow: none;
-    }
-
-    nav li:hover > ul {
-      display: none;
-    }
-  }
-</style>
-
-<header>
-  <img src="AfD_Logo_blau.png" alt="AfD Logo" />
-  <div class="title">
-    <h1><a href="index.html" style="color: white; text-decoration: none;">Armin Kuntz</a></h1>
-    <p>Alternative für Deutschland – Direkt, Klar, Patriotisch</p>
+<header style="background-color: #007ac1; color: white; padding: 20px; display: flex; align-items: center; gap: 15px;">
+  <img src="AfD_Logo_blau.png" alt="AfD Logo" style="height: 50px; width: auto;">
+  <div>
+    <h1 style="margin: 0;"><a href="index.html" style="color: white; text-decoration: none;">Armin Kuntz</a></h1>
+    <p style="margin: 0;">Alternative für Deutschland – Direkt, Klar, Patriotisch</p>
   </div>
 </header>
 
-<nav>
-  <ul>
-    <li><a href="index.html">Startseite</a></li>
-    <li><a href="Kontakt.html">Kontakt</a></li>
+<nav style="background-color: #005999; display: flex; justify-content: center; flex-wrap: wrap; padding: 10px 0;">
+  <a href="index.html" class="nav-link">Startseite</a>
+  <a href="Kontakt.html" class="nav-link">Kontakt</a>
 
-    <li>
-      <a href="#">Links ▾</a>
-      <ul>
-        <li><a href="https://afd.de/" target="_blank" rel="noopener noreferrer">AfD.de</a></li>
-        <li><a href="https://alternative-rlp.de/" target="_blank" rel="noopener noreferrer">AfD Rheinland-Pfalz</a></li>
-        <li><a href="https://afd-swp.de/" target="_blank" rel="noopener noreferrer">AfD Südwestpfalz</a></li>
-      </ul>
-    </li>
+  <div class="dropdown">
+    <a href="#" class="nav-link">Links</a>
+    <div class="dropdown-content">
+      <a href="https://afd.de/" target="_blank">AfD.de</a>
+      <a href="https://alternative-rlp.de/" target="_blank">AfD Rheinland-Pfalz</a>
+      <a href="https://afd-swp.de/" target="_blank">AfD Südwestpfalz</a>
+    </div>
+  </div>
 
-    <li>
-      <a href="#">Satzungen ▾</a>
-      <ul>
-        <li><a href="https://www.afd.de/wp-content/uploads/2022/08/20220816_Bundessatzung_Stand-13.-BPT-Riesa.pdf" target="_blank" rel="noopener noreferrer">AfD Bund</a></li>
-        <li><a href="https://alternative-rlp.de/wp-content/uploads/2023/06/Landessatzung-AfD-RP.pdf" target="_blank" rel="noopener noreferrer">AfD Rheinland-Pfalz</a></li>
-        <li><a href="https://afd-swp.de/wp-content/uploads/2023/06/Satzung-AfD-SWP.pdf" target="_blank" rel="noopener noreferrer">AfD Südwestpfalz</a></li>
-      </ul>
-    </li>
+  <div class="dropdown">
+    <a href="#" class="nav-link">Satzungen</a>
+    <div class="dropdown-content">
+      <a href="https://www.afd.de/wp-content/uploads/2022/08/20220816_Bundessatzung_Stand-13.-BPT-Riesa.pdf" target="_blank">AfD Bund</a>
+      <a href="https://alternative-rlp.de/wp-content/uploads/2023/06/Landessatzung-AfD-RP.pdf" target="_blank">AfD RLP</a>
+      <a href="https://afd-swp.de/wp-content/uploads/2023/06/Satzung-AfD-SWP.pdf" target="_blank">AfD SWP</a>
+    </div>
+  </div>
 
-    <li>
-      <a href="#">Standpunkte ▾</a>
-      <ul>
-        <li><a href="sicherheit.html">Sicherheit</a></li>
-        <li><a href="wirtschaft.html">Wirtschaft</a></li>
-        <li><a href="energie.html">Energie</a></li>
-        <li><a href="familie.html">Familie</a></li>
-    <ul>
-        <li>
-      <a href="#">Verschiedenes ▾</a>
-      </ul>
-        <li><a href="impressum.html">impressum</a></li>
-      </ul>
-    </li>
-  </ul>
-<div class="dropdown" style="position: relative;">
-    <a href="#" style="color: white; text-decoration: none; margin: 0 20px; font-weight: bold;">Verschiedenes</a>
-    <div class="dropdown-content" style="display: none; position: absolute; background-color: #005999; min-width: 200px; z-index: 1;">
-      <a href="impressum.html" style="display: block; padding: 10px; color: white;">Impressum</a>
+  <div class="dropdown">
+    <a href="#" class="nav-link">Standpunkte</a>
+    <div class="dropdown-content">
+      <a href="sicherheit.html">Sicherheit</a>
+      <a href="wirtschaft.html">Wirtschaft</a>
+      <a href="energie.html">Energie</a>
+      <a href="familie.html">Familie</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <a href="#" class="nav-link">Verschiedenes</a>
+    <div class="dropdown-content">
+      <a href="impressum.html">Impressum</a>
     </div>
   </div>
 </nav>
+
+<style>
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 8px 12px;
+    font-weight: bold;
+    display: inline-block;
+  }
+
+  .nav-link:hover {
+    background-color: #007ac1;
+    border-radius: 5px;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #005999;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #007ac1;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+</style>
