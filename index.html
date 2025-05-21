@@ -1,86 +1,189 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>Armin Kuntz – AfD</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="AfD_Logo_blau.png">
-  <link rel="shortcut icon" href="AfD_Logo_blau.png" type="image/png">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Header</title>
+  <link rel="stylesheet" href="styles/stile.css" />
+  <link rel="icon" href="AfD_Logo_blau.png" type="image/png" />
   <style>
+    /* Grund-Reset & Body-Padding wegen fixiertem Header */
     body {
-      font-family: 'Open Sans', sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f5f5f5;
+      padding-top: 140px; /* Header (90px) + Nav (70px) minus etwas Überschneidung */
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
-    main {
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    main img {
-      max-width: 300px;
-      height: auto;
-      border-radius: 8px;
-      margin-top: 20px;
-    }
-
-    .kontakt-link {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
       background-color: #007ac1;
+      color: white;
+      padding: 40px 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      z-index: 1000;
+      box-sizing: border-box;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+    header img {
+      height: 50px;
+      width: auto;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    header h1 a {
       color: white;
       text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
+    }
+    header p {
+      margin: 0;
+      font-size: 1rem;
     }
 
-    .kontakt-link:hover {
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 90px; /* unter Header */
+      left: 0;
+      width: 100%;
       background-color: #005999;
+      z-index: 999;
+      min-height: 70px;
+      padding: 0 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      box-sizing: border-box;
+    }
+    nav a.nav-link {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      padding: 8px 12px;
+      font-weight: bold;
+      display: inline-block;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+    nav a.nav-link:hover,
+    nav a.nav-link:focus {
+      background-color: #007ac1;
+      outline: none;
     }
 
-    footer {
+    /* Dropdown */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #005999;
+      min-width: 180px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      z-index: 2000;
+      border-radius: 4px;
+      padding: 5px 0;
+    }
+    .dropdown-content a {
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      display: block;
+      white-space: nowrap;
+    }
+    .dropdown-content a:hover,
+    .dropdown-content a:focus {
       background-color: #007ac1;
+      outline: none;
+    }
+    .dropdown:hover .dropdown-content,
+    .dropdown:focus-within .dropdown-content {
+      display: block;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #222;
       color: white;
       text-align: center;
-      padding: 15px 10px;
-      margin-top: 40px;
+      padding: 20px 10px;
+      margin-top: auto;
+      font-size: 0.9rem;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
     }
   </style>
 </head>
 <body>
 
-  <!-- Hier wird der Header dynamisch eingefügt -->
-  <div id="header-container"></div>
+<header>
+  <img src="AfD_Logo_blau.png" alt="AfD Logo" />
+  <div>
+    <h1><a href="/index.html">Armin Kuntz</a></h1>
+    <p>Alternative für Deutschland – Direkt, Klar, Patriotisch</p>
+  </div>
+</header>
 
-  <main>
-    <h2>Willkommen auf meiner Seite</h2>
-    <p>Ich setze mich ein für eine klare Politik mit Verantwortung für Deutschland.</p>
-    <img src="profile_with_logo.png" alt="Armin Kuntz mit Logo">
-    <br>
-    <a class="kontakt-link" href="Kontakt.html">Jetzt Kontakt aufnehmen</a>
-  </main>
+<nav aria-label="Hauptnavigation">
+  <a href="index.html" class="nav-link">Startseite</a>
+  <a href="Kontakt.html" class="nav-link">Kontakt</a>
 
-  <footer>
-    &copy; 2025 Armin Kuntz – Alternative für Deutschland
-  </footer>
+  <div class="dropdown" tabindex="0">
+    <a href="#" class="nav-link" aria-haspopup="true" aria-expanded="false">Links</a>
+    <div class="dropdown-content" role="menu" aria-label="Links Dropdown">
+      <a href="https://afd.de/" target="_blank" rel="noopener" role="menuitem">AfD.de</a>
+      <a href="https://alternative-rlp.de/" target="_blank" rel="noopener" role="menuitem">AfD Rheinland-Pfalz</a>
+      <a href="https://afd-swp.de/" target="_blank" rel="noopener" role="menuitem">AfD Südwestpfalz</a>
+    </div>
+  </div>
 
-  <script>
-    fetch('header.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('header-container').innerHTML = data;
-      })
-      .catch(error => console.error('Fehler beim Laden des Headers:', error));
-  </script>
+  <div class="dropdown" tabindex="0">
+    <a href="#" class="nav-link" aria-haspopup="true" aria-expanded="false">Satzungen</a>
+    <div class="dropdown-content" role="menu" aria-label="Satzungen Dropdown">
+      <a href="https://www.afd.de/wp-content/uploads/2022/08/20220816_Bundessatzung_Stand-13.-BPT-Riesa.pdf" target="_blank" rel="noopener" role="menuitem">AfD Bund</a>
+      <a href="https://alternative-rlp.de/wp-content/uploads/2023/06/Landessatzung-AfD-RP.pdf" target="_blank" rel="noopener" role="menuitem">AfD RLP</a>
+      <a href="https://afd-swp.de/wp-content/uploads/2023/06/Satzung-AfD-SWP.pdf" target="_blank" rel="noopener" role="menuitem">AfD SWP</a>
+    </div>
+  </div>
+
+  <div class="dropdown" tabindex="0">
+    <a href="#" class="nav-link" aria-haspopup="true" aria-expanded="false">Standpunkte</a>
+    <div class="dropdown-content" role="menu" aria-label="Standpunkte Dropdown">
+      <a href="sicherheit.html" role="menuitem">Sicherheit</a>
+      <a href="wirtschaft.html" role="menuitem">Wirtschaft</a>
+      <a href="energie.html" role="menuitem">Energie</a>
+      <a href="infrastruktur.html" role="menuitem">Infrastruktur</a>
+      <a href="familie.html" role="menuitem">Familie</a>
+    </div>
+  </div>
+
+  <div class="dropdown" tabindex="0">
+    <a href="#" class="nav-link" aria-haspopup="true" aria-expanded="false">Verschiedenes</a>
+    <div class="dropdown-content" role="menu" aria-label="Verschiedenes Dropdown">
+      <a href="impressum.html" role="menuitem">Impressum</a>
+      <a href="datenschutz.html" role="menuitem">Datenschutzerklärung</a>
+      <a href="https://politpro.eu/de/deutschland" target="_blank" rel="noopener" role="menuitem">Umfrage</a>
+    </div>
+  </div>
+</nav>
+
+<footer>
+  <p>© 2025 Armin Kuntz AfD. Alle Rechte vorbehalten.</p>
+</footer>
 
 </body>
 </html>
