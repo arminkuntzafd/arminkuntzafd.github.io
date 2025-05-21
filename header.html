@@ -1,5 +1,11 @@
 <!-- header.html -->
 <style>
+  body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f5f5f5;
+  }
+
   header {
     background-color: #007ac1;
     color: white;
@@ -74,4 +80,48 @@
     color: white;
   }
 
-  .dropdown:hover
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+</style>
+
+<header>
+  <img src="AfD_Logo_blau.png" alt="AfD Logo">
+  <div class="title">
+    <h1><a href="index.html" style="color: white; text-decoration: none;">Armin Kuntz</a></h1>
+    <p>Alternative für Deutschland – Direkt, Klar, Patriotisch</p>
+  </div>
+</header>
+
+<nav>
+  <a href="index.html">Startseite</a>
+  <a href="Kontakt.html">Kontakt</a>
+
+  <div class="dropdown">
+    <a href="#">Links</a>
+    <div class="dropdown-content">
+      <a href="https://afd.de/" target="_blank">AfD.de</a>
+      <a href="https://alternative-rlp.de/" target="_blank">AfD Rheinland-Pfalz</a>
+      <a href="https://afd-swp.de/" target="_blank">AfD Südwestpfalz</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <a href="#">Satzungen</a>
+    <div class="dropdown-content">
+      <a href="https://www.afd.de/wp-content/uploads/2022/08/20220816_Bundessatzung_Stand-13.-BPT-Riesa.pdf" target="_blank">AfD Bund</a>
+      <a href="https://alternative-rlp.de/wp-content/uploads/2023/06/Landessatzung-AfD-RP.pdf" target="_blank">AfD Rheinland-Pfalz</a>
+      <a href="https://afd-swp.de/wp-content/uploads/2023/06/Satzung-AfD-SWP.pdf" target="_blank">AfD Südwestpfalz</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <a href="#">Standpunkte</a>
+    <div class="dropdown-content">
+      <a href="sicherheit.html">Sicherheit</a>
+      <a href="wirtschaft.html">Wirtschaft</a>
+      <a href="energie.html">Energie</a>
+      <a href="familie.html">Familie</a>
+    </div>
+  </div>
+</nav>
