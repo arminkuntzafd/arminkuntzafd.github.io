@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Impressum – Armin Kuntz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 6px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #005999;
+      margin-bottom: 30px;
+    }
+
+    h3 {
+      color: #007ac1;
+      margin-top: 30px;
+    }
+
+    p, li {
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background-color: #007ac1;
+      color: white;
+      text-align: center;
+      padding: 15px 10px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="header-container"></div>
+
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('header-container').innerHTML = html;
+      })
+      .catch(error => console.error('Fehler beim Laden des Headers:', error));
+  </script>
+
+  <main>
+    <h2>Impressum</h2>
+
+    <h3>Angaben gemäß § 5 TMG</h3>
+    <p>
+      Armin Kuntz<br>
+      Steinstr. 63<br>
+      66955 Pirmasens<br>
+      Deutschland
+    </p>
+
+    <h3>Kontakt</h3>
+    <p>
+      Telefon: 01525 2603314<br>
+      E-Mail: kuntzarmin6@gmail.com
+    </p>
+
+    <h3>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h3>
+    <p>
+      Armin Kuntz<br>
+      Steinstr. 63<br>
+      66955 Pirmasens
+    </p>
+
+    <h3>Haftungsausschluss</h3>
+    <p><strong>Haftung für Inhalte</strong></p>
+    <p>
+      Als Diensteanbieter bin ich gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG besteht jedoch keine Verpflichtung, übermittelte oder gespeicherte fremde Informationen zu überwachen.
+    </p>
+
+    <p><strong>Haftung für Links</strong></p>
+    <p>
+      Diese Website enthält Links zu externen Webseiten Dritter, auf deren Inhalte ich keinen Einfluss habe. Deshalb kann ich für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich.
+    </p>
+
+    <h3>Urheberrecht</h3>
+    <p>
+      Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Beiträge Dritter sind entsprechend gekennzeichnet. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung.
+    </p>
+  </main>
+
+  <footer>
+    &copy; 2025 Armin Kuntz – Alternative für Deutschland
+  </footer>
+
+</body>
+</html>
