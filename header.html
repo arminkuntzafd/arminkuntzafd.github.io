@@ -7,6 +7,48 @@
   <link rel="stylesheet" href="styles/stile.css" />
   <link rel="icon" type="image/png" href="arminkuntzafd.github.io/AfD_Logo_blau2.png"  />
 <head>
+  <html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pirmasens Temperatur</title>
+  <style>
+    #temp-header {
+      font-size: 1.2rem;
+      font-weight: bold;
+      padding: 10px;
+      background-color: #eee;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div id="temp-header">Lade Temperatur...</div>
+</header>
+
+<script>
+  async function getTemperature() {
+    const apiKey = 'DEIN_API_KEY';  // hier API-Key rein
+    const city = 'Pirmasens,de';
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=de&appid=${apiKey}`;
+
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error('Fehler beim Laden der Wetterdaten');
+      const data = await response.json();
+
+      const temp = data.main.temp.toFixed(1); // Temperatur mit 1 Nachkommastelle
+      document.getElementById('temp-header').textContent = `Aktuelle Temperatur in Pirmasens: ${temp} °C`;
+    } catch (error) {
+      document.getElementById('temp-header').textContent = 'Wetterdaten konnten nicht geladen werden.';
+      console.error(error);
+    }
+  }
+
+  getTemperature();
+</script>
   <style>
     /* Grund-Reset & Body-Padding wegen fixiertem Header */
     body {
