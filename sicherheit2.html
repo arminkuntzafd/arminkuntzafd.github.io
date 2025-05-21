@@ -15,21 +15,27 @@
 
     main {
       padding: 40px 20px;
-      max-width: 700px;
+      max-width: 900px;
       margin: 40px auto;
       background: white;
       border-radius: 6px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      text-align: left;
     }
 
-    main h2 {
-      margin-bottom: 20px;
+    h2 {
       text-align: center;
+      color: #005999;
+      margin-bottom: 30px;
     }
 
-    main p {
-      line-height: 1.6;
+    h3 {
+      color: #007ac1;
+      margin-top: 30px;
+    }
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.7;
       margin-bottom: 15px;
     }
 
@@ -47,25 +53,45 @@
   <div id="header-container"></div>
 
   <script>
-    fetch('/header.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('header-container').innerHTML = data;
+    fetch('header.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('header-container').innerHTML = html;
       })
-      .catch(err => {
-        console.error('Header konnte nicht geladen werden:', err);
-      });
+      .catch(error => console.error('Fehler beim Laden des Headers:', error));
   </script>
 
   <main>
-    <h2>Sicherheit</h2>
+    <h2>Unsere Position zur Sicherheit</h2>
+
+    <h3>Außenpolitische Sicherheit</h3>
     <p>
-      Deutschland soll sich als neutraler Staat verhalten und Einmischungen in internationale Konflikte vermeiden. NATO-Einsätze sollen nur im Rahmen des § 5 des NATO-Statuts im Verteidigungsfall erfolgen.
+      Deutschland sollte sich wieder stärker als neutraler und souveräner Staat positionieren. Wir fordern:
     </p>
+    <ul>
+      <li>Keine Beteiligung an Auslandseinsätzen außerhalb des NATO-Verteidigungsfalls (§5 NATO-Statut).</li>
+      <li>Diplomatie statt militärischer Interventionen – Deutschland als Friedensvermittler.</li>
+    </ul>
+
+    <h3>Innere Sicherheit stärken</h3>
     <p>
-      Für die innere Sicherheit soll die Polizei aufgestockt werden. In meiner Jugend an der deutsch-französischen Grenze habe ich oft Grenzkontrollen erlebt – das war für die Sicherheit der Region wichtig.
+      Die Sicherheit unserer Bürger muss oberste Priorität haben. Deshalb fordern wir:
+    </p>
+    <ul>
+      <li>Mehr Personal und bessere Ausstattung für Polizei und Justiz.</li>
+      <li>Konsequente Strafverfolgung ohne politische Zurückhaltung.</li>
+      <li>Wiedereinführung wirksamer Grenzkontrollen – Schutz beginnt an der Grenze.</li>
+    </ul>
+
+    <h3>Freiheit durch Ordnung</h3>
+    <p>
+      Sicherheit ist die Grundlage für Freiheit. Nur ein starker Staat kann den Schutz der Bürger gewährleisten. Wir setzen uns für eine klare Linie gegenüber Kriminalität ein – ohne ideologische Scheuklappen.
     </p>
   </main>
+
+  <footer>
+    &copy; 2025 Armin Kuntz – Alternative für Deutschland
+  </footer>
 
 </body>
 </html>
