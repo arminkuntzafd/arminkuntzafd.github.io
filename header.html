@@ -1,5 +1,6 @@
 <!-- header.html -->
 <style>
+  /* Grundstyles */
   body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
@@ -40,53 +41,112 @@
   nav {
     background-color: #005999;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    padding: 10px 0;
-    gap: 15px;
+    padding: 0;
+    gap: 0;
   }
 
-  nav a {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    font-weight: bold;
+  nav > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
   }
 
-  nav a:hover {
-    background-color: #007ac1;
-    border-radius: 5px;
-  }
-
-  .dropdown {
+  nav li {
     position: relative;
   }
 
-  .dropdown-content {
+  nav > ul > li {
+    /* Gleiche Höhe & Breite für Top-Level-Menüs */
+    height: 45px;
+    line-height: 45px;
+    min-width: 110px;
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.15);
+  }
+
+  nav > ul > li:last-child {
+    border-right: none;
+  }
+
+  nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0 15px;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  nav a:hover, nav li:hover > a {
+    background-color: #007ac1;
+  }
+
+  /* Dropdown Styles */
+  nav ul ul {
     display: none;
     position: absolute;
     background-color: #005999;
-    min-width: 200px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-    z-index: 1;
-    top: 100%;
+    top: 45px; /* Höhe des Menüs */
     left: 0;
+    min-width: 180px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    z-index: 1000;
     flex-direction: column;
   }
 
-  .dropdown-content a {
-    padding: 10px;
-    display: block;
-    color: white;
+  nav ul ul li {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    height: auto;
+    line-height: normal;
   }
 
-  .dropdown:hover .dropdown-content {
-    display: block;
+  nav ul ul li:last-child {
+    border-bottom: none;
+  }
+
+  nav ul ul a {
+    padding: 10px 15px;
+    font-weight: normal;
+    height: auto;
+    line-height: normal;
+    text-align: left;
+  }
+
+  nav li:hover > ul {
+    display: flex;
+  }
+
+  /* Responsive (optional) */
+  @media (max-width: 600px) {
+    nav > ul {
+      flex-direction: column;
+    }
+
+    nav > ul > li {
+      border-right: none;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      min-width: 100%;
+      height: auto;
+      line-height: normal;
+    }
+
+    nav ul ul {
+      position: static;
+      box-shadow: none;
+    }
+
+    nav li:hover > ul {
+      display: none;
+    }
   }
 </style>
 
 <header>
-  <img src="AfD_Logo_blau.png" alt="AfD Logo">
+  <img src="AfD_Logo_blau.png" alt="AfD Logo" />
   <div class="title">
     <h1><a href="index.html" style="color: white; text-decoration: none;">Armin Kuntz</a></h1>
     <p>Alternative für Deutschland – Direkt, Klar, Patriotisch</p>
@@ -94,34 +154,36 @@
 </header>
 
 <nav>
-  <a href="index.html">Startseite</a>
-  <a href="Kontakt.html">Kontakt</a>
+  <ul>
+    <li><a href="index.html">Startseite</a></li>
+    <li><a href="Kontakt.html">Kontakt</a></li>
 
-  <div class="dropdown">
-    <a href="#">Links</a>
-    <div class="dropdown-content">
-      <a href="https://afd.de/" target="_blank">AfD.de</a>
-      <a href="https://alternative-rlp.de/" target="_blank">AfD Rheinland-Pfalz</a>
-      <a href="https://afd-swp.de/" target="_blank">AfD Südwestpfalz</a>
-    </div>
-  </div>
+    <li>
+      <a href="#">Links ▾</a>
+      <ul>
+        <li><a href="https://afd.de/" target="_blank" rel="noopener noreferrer">AfD.de</a></li>
+        <li><a href="https://alternative-rlp.de/" target="_blank" rel="noopener noreferrer">AfD Rheinland-Pfalz</a></li>
+        <li><a href="https://afd-swp.de/" target="_blank" rel="noopener noreferrer">AfD Südwestpfalz</a></li>
+      </ul>
+    </li>
 
-  <div class="dropdown">
-    <a href="#">Satzungen</a>
-    <div class="dropdown-content">
-      <a href="https://www.afd.de/wp-content/uploads/2022/08/20220816_Bundessatzung_Stand-13.-BPT-Riesa.pdf" target="_blank">AfD Bund</a>
-      <a href="https://alternative-rlp.de/wp-content/uploads/2023/06/Landessatzung-AfD-RP.pdf" target="_blank">AfD Rheinland-Pfalz</a>
-      <a href="https://afd-swp.de/wp-content/uploads/2023/06/Satzung-AfD-SWP.pdf" target="_blank">AfD Südwestpfalz</a>
-    </div>
-  </div>
+    <li>
+      <a href="#">Satzungen ▾</a>
+      <ul>
+        <li><a href="https://www.afd.de/wp-content/uploads/2022/08/20220816_Bundessatzung_Stand-13.-BPT-Riesa.pdf" target="_blank" rel="noopener noreferrer">AfD Bund</a></li>
+        <li><a href="https://alternative-rlp.de/wp-content/uploads/2023/06/Landessatzung-AfD-RP.pdf" target="_blank" rel="noopener noreferrer">AfD Rheinland-Pfalz</a></li>
+        <li><a href="https://afd-swp.de/wp-content/uploads/2023/06/Satzung-AfD-SWP.pdf" target="_blank" rel="noopener noreferrer">AfD Südwestpfalz</a></li>
+      </ul>
+    </li>
 
-  <div class="dropdown">
-    <a href="#">Standpunkte</a>
-    <div class="dropdown-content">
-      <a href="sicherheit.html">Sicherheit</a>
-      <a href="wirtschaft.html">Wirtschaft</a>
-      <a href="energie.html">Energie</a>
-      <a href="familie.html">Familie</a>
-    </div>
-  </div>
+    <li>
+      <a href="#">Standpunkte ▾</a>
+      <ul>
+        <li><a href="sicherheit.html">Sicherheit</a></li>
+        <li><a href="wirtschaft.html">Wirtschaft</a></li>
+        <li><a href="energie.html">Energie</a></li>
+        <li><a href="familie.html">Familie</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
