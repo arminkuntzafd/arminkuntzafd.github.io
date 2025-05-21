@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Sicherheit – Armin Kuntz</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     body {
       font-family: 'Open Sans', sans-serif;
@@ -18,14 +15,22 @@
 
     main {
       padding: 40px 20px;
-      max-width: 800px;
-      margin: 0 auto;
-      line-height: 1.6;
+      max-width: 700px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 6px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: left;
     }
 
-    h2 {
+    main h2 {
+      margin-bottom: 20px;
       text-align: center;
-      margin-bottom: 30px;
+    }
+
+    main p {
+      line-height: 1.6;
+      margin-bottom: 15px;
     }
 
     footer {
@@ -39,37 +44,28 @@
 </head>
 <body>
 
-  <!-- Dynamischer Header -->
   <div id="header-container"></div>
 
-  <main>
-    <h2>Unsere Standpunkte zur Sicherheit</h2>
-
-    <p>
-      Deutschland soll sich außenpolitisch wie ein neutraler Staat verhalten. Eine Einmischung in internationale Konflikte ist zu vermeiden. NATO-Einsätze dürfen nur im Rahmen des Artikel 5 des NATO-Statuts im Verteidigungsfall stattfinden.
-    </p>
-
-    <p>
-      Im Inneren ist die Sicherheit der Bürger oberstes Gebot. Deshalb fordern wir eine personelle und materielle Stärkung der Polizei. Eine sichtbare Polizeipräsenz schafft Vertrauen und schützt vor Kriminalität.
-    </p>
-
-    <p>
-      Ich erinnere mich an meine Jugend an der deutsch-französischen Grenze – Grenzkontrollen waren damals selbstverständlich und effektiv. Wir setzen uns für die Wiedereinführung gezielter Grenzkontrollen zum Schutz unserer nationalen Sicherheit ein.
-    </p>
-  </main>
-
-  <footer>
-    &copy; 2025 Armin Kuntz – Alternative für Deutschland
-  </footer>
-
   <script>
-    fetch('header.html')
-      .then(response => response.text())
+    fetch('/header.html')
+      .then(res => res.text())
       .then(data => {
         document.getElementById('header-container').innerHTML = data;
       })
-      .catch(error => console.error('Fehler beim Laden des Headers:', error));
+      .catch(err => {
+        console.error('Header konnte nicht geladen werden:', err);
+      });
   </script>
+
+  <main>
+    <h2>Sicherheit</h2>
+    <p>
+      Deutschland soll sich als neutraler Staat verhalten und Einmischungen in internationale Konflikte vermeiden. NATO-Einsätze sollen nur im Rahmen des § 5 des NATO-Statuts im Verteidigungsfall erfolgen.
+    </p>
+    <p>
+      Für die innere Sicherheit soll die Polizei aufgestockt werden. In meiner Jugend an der deutsch-französischen Grenze habe ich oft Grenzkontrollen erlebt – das war für die Sicherheit der Region wichtig.
+    </p>
+  </main>
 
 </body>
 </html>
